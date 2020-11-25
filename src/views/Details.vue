@@ -4,7 +4,6 @@
   >
     <Spinner v-if="!loaded" />
     <div v-else class="container mx-auto px-6 h-full">
-      <!-- <h1>{{ $route.params.code }}</h1> -->
       <div class="pb-20 pt-12 lg:py-20">
         <router-link to="/">
           <button
@@ -65,7 +64,7 @@
           <div
             class="my-8 lg:mt-auto flex flex-col lg:flex-row lg:items-center"
           >
-            <span class="font-semibold mb-2 lg:mr-3 lg:min-w-max"
+            <span class="font-semibold mb-2 lg:mb-0 lg:mr-3 lg:min-w-max"
               >Border Countries:</span
             >
 
@@ -116,16 +115,29 @@ export default {
         .then(({ data }) => {
           this.country = data;
           const { borders } = data;
-          axios
-            .get(
-              `https://restcountries.eu/rest/v2/alpha?codes=${borders.join(
-                ";"
-              )}`
-            )
-            .then(({ data }) => {
-              this.borders = data;
-              this.loaded = true;
-            });
+          if (borders.length) {
+            axios
+              .get(
+                `https://restcountries.eu/rest/v2/alpha?codes=${borders.join(
+                  ";"
+                )}`
+              )
+              .then(({ data }) => {
+                this.borders = data;
+                this.loaded = true;
+              })
+              .catch(() => {
+                this.borders = [];
+                this.loaded = true;
+              });
+          } else {
+            this.borders = [];
+            this.loaded = true;
+          }
+        })
+        .catch(() => {
+          this.country = {};
+          this.loaded = true;
         });
     },
   },

@@ -1,5 +1,12 @@
 <template>
+  <h1
+    v-if="!$props.countries.length"
+    class="text-2xl font-semibold text-center mt-20"
+  >
+    No countries matching the current filter
+  </h1>
   <div
+    v-else
     class="mt-4 px-12 sm:px-4 lg:mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4 lg:gap-16 xl:gap-20"
   >
     <router-link
