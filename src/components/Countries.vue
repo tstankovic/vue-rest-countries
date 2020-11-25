@@ -15,7 +15,7 @@
       :to="{ name: 'Details', params: { code: country.alpha3Code } }"
     >
       <div
-        class="bg-white dark:bg-dark-elements transition shadow rounded cursor-pointer select-none max-w-sm mx-auto sm:max-w-none sm:mx-0"
+        class="bg-white dark:bg-dark-elements transition shadow rounded cursor-pointer max-w-sm mx-auto sm:max-w-none sm:mx-0"
       >
         <div class="h-48 rounded-t">
           <img :src="country.flag" alt="" class="w-full h-full rounded-t" />
