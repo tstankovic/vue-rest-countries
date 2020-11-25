@@ -27,7 +27,7 @@
         <font-awesome-icon icon="caret-down" />
       </div>
       <div
-        class="absolute w-full top-full left-0 px-6 py-2 mt-1 shadow rounded bg-white dark:bg-dark-elements"
+        class="absolute w-full top-full left-0 px-6 py-2 mt-1 shadow rounded bg-white dark:bg-dark-elements transition"
         :class="{ block: open, hidden: !open }"
       >
         <div class="py-1 cursor-pointer" @click="handleRegionClick('')">
