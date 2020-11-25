@@ -8,7 +8,10 @@
           Where in the world?
         </h1>
       </router-link>
-      <div class="flex items-center cursor-pointer" @click="$emit('dark-mode')">
+      <div
+        class="flex items-center cursor-pointer select-none"
+        @click="$emit('dark-mode')"
+      >
         <font-awesome-icon v-if="dark" :icon="['fas', 'moon']" />
         <font-awesome-icon v-else :icon="['far', 'moon']" />
         <h6 class="ml-2 text-base">Dark mode</h6>

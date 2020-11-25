@@ -11,13 +11,13 @@
         <input
           type="text"
           placeholder="Search for a country..."
-          class="w-full h-full dark:bg-dark-elements"
+          class="w-full h-full bg-white dark:bg-dark-elements transition"
           v-model="name"
         />
       </form>
     </div>
     <div
-      class="relative w-48 h-12 shadow rounded bg-white dark:bg-dark-elements"
+      class="relative w-48 h-12 shadow rounded bg-white dark:bg-dark-elements transition"
     >
       <div
         class="w-full h-full flex justify-between items-center px-4 cursor-pointer"
