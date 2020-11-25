@@ -31,7 +31,7 @@
               >
               <span class="my-1 font-light"
                 ><span class="font-semibold mr-1.5">Population:</span
-                >{{ country.population }}</span
+                >{{ population(country.population) }}</span
               >
               <span class="my-1 font-light"
                 ><span class="font-semibold mr-1.5">Region:</span
@@ -76,7 +76,7 @@
                 :to="{ name: 'Details', params: { code: border.alpha3Code } }"
               >
                 <div
-                  class="py-0.5 px-6 shadow border dark:border-dark-bg bg-light-bg dark:bg-dark-elements rounded flex justify-center items-center"
+                  class="py-0.5 px-6 shadow border dark:border-dark-bg dark:bg-dark-elements rounded flex justify-center items-center"
                 >
                   <span class="font-light">{{ border.name }}</span>
                 </div>
@@ -91,6 +91,7 @@
 
 <script>
 import axios from "axios";
+import numeral from "numeral";
 import Spinner from "@/components/Spinner";
 
 export default {
@@ -139,6 +140,9 @@ export default {
           this.country = {};
           this.loaded = true;
         });
+    },
+    population(number) {
+      return numeral(number).format("0,0");
     },
   },
   computed: {
