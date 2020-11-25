@@ -7,17 +7,17 @@
         icon="search"
         class="text-light-input dark:text-dark-text"
       />
-      <form @submit.prevent="$emit('search', name)" class="w-full h-full ml-3">
+      <form @submit.prevent="$emit('search', name)" class="w-full h-full ml-2">
         <input
           type="text"
           placeholder="Search for a country..."
-          class="w-full h-full bg-white dark:bg-dark-elements transition"
+          class="w-full h-full pl-2 bg-white dark:bg-dark-elements transition focus:outline-none"
           v-model="name"
         />
       </form>
     </div>
     <div
-      class="relative w-48 h-12 shadow rounded bg-white dark:bg-dark-elements transition"
+      class="relative w-48 h-12 shadow rounded bg-white dark:bg-dark-elements transition select-none"
     >
       <div
         class="w-full h-full flex justify-between items-center px-4 cursor-pointer"

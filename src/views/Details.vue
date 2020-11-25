@@ -1,6 +1,6 @@
 <template>
   <main
-    class="full-height bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text transition"
+    class="full-height text-light-text bg-light-bg dark:bg-dark-bg dark:text-dark-text transition"
   >
     <Spinner v-if="!loaded" />
     <div v-else class="container mx-auto px-6 h-full">
@@ -17,7 +17,7 @@
           </button>
         </router-link>
       </div>
-      <div class="flex flex-col lg:flex-row lg:gap-10 lg:h-96">
+      <div class="flex flex-col lg:flex-row lg:h-96">
         <div class="flex-1 h-full">
           <img :src="country.flag" alt="" class="w-full h-full" />
         </div>

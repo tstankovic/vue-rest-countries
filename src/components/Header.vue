@@ -1,6 +1,6 @@
 <template>
   <header
-    class="py-5 dark:bg-dark-elements text-light-text dark:text-dark-text transition"
+    class="py-5 bg-white dark:bg-dark-elements text-light-text dark:text-dark-text transition"
   >
     <div class="container px-4 mx-auto flex justify-between items-center">
       <router-link to="/">

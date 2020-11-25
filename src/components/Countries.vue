@@ -15,12 +15,12 @@
       :to="{ name: 'Details', params: { code: country.alpha3Code } }"
     >
       <div
-        class="bg-white dark:bg-dark-elements shadow rounded cursor-pointer max-w-sm mx-auto sm:max-w-none sm:mx-0"
+        class="bg-white dark:bg-dark-elements transition shadow rounded cursor-pointer select-none max-w-sm mx-auto sm:max-w-none sm:mx-0"
       >
         <div class="h-48 rounded-t">
           <img :src="country.flag" alt="" class="w-full h-full rounded-t" />
         </div>
-        <div class="h-1/2 flex flex-col p-6 pb-10">
+        <div class="flex flex-col pb-10 pt-8 px-6">
           <h6 class="text-base font-extrabold mb-3">{{ country.name }}</h6>
           <p class="my-0.5">
             <span class="font-semibold mr-1">Population:</span
