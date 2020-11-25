@@ -76,7 +76,7 @@
                 :to="{ name: 'Details', params: { code: border.alpha3Code } }"
               >
                 <div
-                  class="py-0.5 px-6 shadow border dark:border-dark-bg rounded flex justify-center items-center"
+                  class="py-0.5 px-6 shadow border dark:border-dark-bg bg-light-bg dark:bg-dark-elements rounded flex justify-center items-center"
                 >
                   <span class="font-light">{{ border.name }}</span>
                 </div>
