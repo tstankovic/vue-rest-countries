@@ -17,7 +17,7 @@
       <div
         class="bg-white dark:bg-dark-elements shadow rounded cursor-pointer max-w-sm mx-auto sm:max-w-none sm:mx-0"
       >
-        <div class="h-40 rounded-t">
+        <div class="h-48 rounded-t">
           <img :src="country.flag" alt="" class="w-full h-full rounded-t" />
         </div>
         <div class="h-1/2 flex flex-col p-6 pb-10">

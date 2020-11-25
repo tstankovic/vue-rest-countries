@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-between flex-col lg:flex-row gap-6 p-4 lg:gap-0">
     <div
-      class="w-full lg:w-96 h-12 bg-white dark:bg-dark-elements shadow rounded flex items-center px-6 py-2"
+      class="w-full lg:w-96 h-12 bg-white dark:bg-dark-elements transition shadow rounded flex items-center px-6 py-2"
     >
       <font-awesome-icon
         icon="search"
