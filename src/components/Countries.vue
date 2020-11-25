@@ -24,7 +24,7 @@
           <h6 class="text-base font-extrabold mb-3">{{ country.name }}</h6>
           <p class="my-0.5">
             <span class="font-semibold mr-1">Population:</span
-            >{{ country.population }}
+            >{{ population(country.population) }}
           </p>
           <p class="my-0.5">
             <span class="font-semibold mr-1">Region:</span>{{ country.region }}
@@ -40,6 +40,8 @@
 </template>
 
 <script>
+import numeral from "numeral";
+
 export default {
   name: "Countries",
   props: ["countries"],
@@ -51,6 +53,9 @@ export default {
   methods: {
     handleInputChange(e) {
       this.name = e.target.value;
+    },
+    population(number) {
+      return numeral(number).format("0,0");
     },
   },
 };
