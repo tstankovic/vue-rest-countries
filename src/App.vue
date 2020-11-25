@@ -1,32 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app" :class="{ dark: darkMode }">
+    <Header :dark="darkMode" v-on:dark-mode="handleDarkMode" />
     <router-view />
   </div>
 </template>
 
+<script>
+import Header from "@/components/Header";
+
+export default {
+  components: {
+    Header,
+  },
+  data() {
+    return {
+      darkMode: false,
+    };
+  },
+  mounted() {
+    if (localStorage.dark) this.darkMode = true;
+  },
+  methods: {
+    handleDarkMode() {
+      if (localStorage.dark) localStorage.removeItem("dark");
+      else localStorage.setItem("dark", true);
+      this.darkMode = !this.darkMode;
+    },
+  },
+};
+</script>
+
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  min-height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
