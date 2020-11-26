@@ -76,7 +76,6 @@ export default {
       this.nameFilter = name;
     },
     handleRegionChange(region) {
-      console.log(this.nameFilter);
       this.loaded = false;
       this.regionFilter = region;
       let url;
