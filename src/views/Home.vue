@@ -6,6 +6,7 @@
       <div class="lg:py-10">
         <Options
           v-on:search="handleSearch"
+          v-on:search-change="handleSearchChange"
           v-on:region="handleRegionChange"
           :region="regionFilter"
         />
@@ -50,11 +51,11 @@ export default {
     };
   },
   methods: {
-    handleSearch(name) {
+    handleSearch() {
       this.loaded = false;
       let url;
-      if (name.trim().length)
-        url = `https://restcountries.eu/rest/v2/name/${name}`;
+      if (this.nameFilter.trim().length)
+        url = `https://restcountries.eu/rest/v2/name/${this.nameFilter}`;
       else url = "https://restcountries.eu/rest/v2/all";
       axios
         .get(url)
@@ -71,7 +72,11 @@ export default {
           this.loaded = true;
         });
     },
+    handleSearchChange(name) {
+      this.nameFilter = name;
+    },
     handleRegionChange(region) {
+      console.log(this.nameFilter);
       this.loaded = false;
       this.regionFilter = region;
       let url;
@@ -80,7 +85,11 @@ export default {
       axios
         .get(url)
         .then(({ data }) => {
-          this.countries = data;
+          if (!this.nameFilter.trim().length) this.countries = data;
+          else
+            this.countries = data.filter((c) =>
+              c.name.toLowerCase().includes(this.nameFilter)
+            );
           this.loaded = true;
         })
         .catch(() => {

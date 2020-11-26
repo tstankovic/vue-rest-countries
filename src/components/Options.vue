@@ -7,12 +7,13 @@
         icon="search"
         class="text-light-input dark:text-dark-text"
       />
-      <form @submit.prevent="$emit('search', name)" class="w-full h-full ml-2">
+      <form @submit.prevent="$emit('search')" class="w-full h-full ml-2">
         <input
           type="text"
           placeholder="Search for a country..."
           class="w-full h-full pl-2 bg-white dark:bg-dark-elements transition focus:outline-none"
           v-model="name"
+          @change="$emit('search-change', name)"
         />
       </form>
     </div>
